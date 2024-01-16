@@ -1,71 +1,70 @@
 ﻿
-int number = 2226675;
-string numberAsstring = number.ToString();
-char[] letters = numberAsstring.ToArray();
+int numery = 266998666;
+string ilosciliczb = numery.ToString();
+char[] liczby = ilosciliczb.ToArray();
 
-int counter0 = 0;
-int counter1 = 0;
-int counter2 = 0;
-int counter3 = 0;
-int counter4 = 0;
-int counter5 = 0;
-int counter6 = 0;
-int counter7 = 0;
-int counter8 = 0;
-int counter9 = 0;
+int licznik0 = 0;
+int licznik1 = 0;
+int licznik2 = 0;
+int licznik3 = 0;
+int licznik4 = 0;
+int licznik5 = 0;
+int licznik6 = 0;
+int licznik7 = 0;
+int licznik8 = 0;
+int licznik9 = 0;
 
-
-foreach (char letter in letters)
+foreach(char m in liczby) 
 {
-    if (letter == '0')
+    if (m == '0') 
     {
-        counter0++;
+        licznik0++;
     }
-    else if (letter == '1')
+    else if (m == '1') 
     {
-        counter1++;
+        licznik1++;
     }
-    if (  letter=='2' ) 
+    if (m == '2') 
     {
-        counter2++;
+        licznik2++;
     }
-    else if(letter == '3') 
+    else if (m == '3') 
     {
-        counter3++;
+        licznik3++;
     }
-    if (letter == '4') 
+    if (m == '4') 
     {
-        counter4++;    
+        licznik4++;
     }
-    else if (letter == '5') 
+    else if (m == '5') 
     {
-        counter5++;
+        licznik5++;     
     }
-    if (letter == '6') 
+    if (m == '6') 
     {
-        counter6++;
+        licznik6++;
     }
-    else if(letter == '7') 
+    else if (m == '7') 
     {
-        counter7++;    
+        licznik7++;    
     }
-    if (letter == '8') 
+    if (m == '8') 
     {
-        counter8++;    
+        licznik8++;
     }
-    else if(letter == '9') 
+    else if (m == '9') 
     {
-        counter9++;    
+        licznik9++;
     }
 }
-Console.WriteLine( "wynik" + number) ;
-Console.WriteLine("0=>" + counter0);
-Console.WriteLine("1=>" + counter1);
-Console.WriteLine("2=>" + counter2);
-Console.WriteLine("3=>" + counter3);
-Console.WriteLine("4=>" + counter4);
-Console.WriteLine("5=>" + counter5);
-Console.WriteLine("6=>" + counter6);
-Console.WriteLine("7=>" + counter7);
-Console.WriteLine("8=>" + counter8);
-Console.WriteLine("9=>" + counter9);
+Console.WriteLine("wynik dla liczby" + numery);
+Console.WriteLine("0===>" + licznik0);
+Console.WriteLine("1===>" + licznik1);
+Console.WriteLine("2===>" + licznik2);
+Console.WriteLine("3===>" + licznik3);
+Console.WriteLine("4===>" + licznik4);
+Console.WriteLine("5===>" + licznik5);
+Console.WriteLine("6===>" + licznik6);
+Console.WriteLine("7===>" + licznik7);
+Console.WriteLine("8===>" + licznik8);
+Console.WriteLine("9===>" + licznik9);
