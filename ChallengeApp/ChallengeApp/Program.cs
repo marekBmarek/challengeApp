@@ -1,70 +1,94 @@
 ﻿
-int numery = 266998666;
-string ilosciliczb = numery.ToString();
-char[] liczby = ilosciliczb.ToArray();
+Employe employee1 = new Employe ("Fredek", "Nowak", "25");
+Employe employee2 = new Employe ("Marek", "Komarek ","30");
+Employe employee3 = new Employe ("Jozek",  "Bizon","35");
+Employe employee4 = new Employe ("Czesiek", "Gniewek","40");
+Employe employee5 = new Employe ("Monika", "Bzyk", "45");
 
-int licznik0 = 0;
-int licznik1 = 0;
-int licznik2 = 0;
-int licznik3 = 0;
-int licznik4 = 0;
-int licznik5 = 0;
-int licznik6 = 0;
-int licznik7 = 0;
-int licznik8 = 0;
-int licznik9 = 0;
+employee1.Addscore(3);
+employee1.Addscore(3);
+employee1.Addscore(1);
+employee1.Addscore(4);
+employee1.Addscore(9);
+employee1.Addscore(1);
 
-foreach(char m in liczby) 
+employee2.Addscore(5);
+employee2.Addscore(3);
+employee2.Addscore(4);
+employee2.Addscore(6);
+employee2.Addscore(10);
+employee2.Addscore(10);
+
+employee3.Addscore(1);
+employee3.Addscore(1);
+employee3.Addscore(2);
+employee3.Addscore(3);
+employee3.Addscore(7);
+employee3.Addscore(4);
+
+employee4.Addscore(4);
+employee4.Addscore(1);
+employee4.Addscore(9);
+employee4.Addscore(4);
+employee4.Addscore(1);
+employee4.Addscore(1);
+
+employee5.Addscore(3);
+employee5.Addscore(3);
+employee5.Addscore(9);
+employee5.Addscore(1);
+employee5.Addscore(2);
+employee5.Addscore(1);
+
+
+
+List<Employe> employes = new List<Employe>()
 {
-    if (m == '0') 
+    employee1,employee2,employee3,employee4,employee5
+
+};
+
+
+int maxResult = 0;
+Employe EmployeewithMaxResult = null;
+
+foreach(var employee in employes) 
+{
+    if (employee.Result > maxResult) 
     {
-        licznik0++;
-    }
-    else if (m == '1') 
-    {
-        licznik1++;
-    }
-    if (m == '2') 
-    {
-        licznik2++;
-    }
-    else if (m == '3') 
-    {
-        licznik3++;
-    }
-    if (m == '4') 
-    {
-        licznik4++;
-    }
-    else if (m == '5') 
-    {
-        licznik5++;     
-    }
-    if (m == '6') 
-    {
-        licznik6++;
-    }
-    else if (m == '7') 
-    {
-        licznik7++;    
-    }
-    if (m == '8') 
-    {
-        licznik8++;
-    }
-    else if (m == '9') 
-    {
-        licznik9++;
+        maxResult = employee.Result; 
+        EmployeewithMaxResult = employee;
     }
 }
-Console.WriteLine("wynik dla liczby" + numery);
-Console.WriteLine("0===>" + licznik0);
-Console.WriteLine("1===>" + licznik1);
-Console.WriteLine("2===>" + licznik2);
-Console.WriteLine("3===>" + licznik3);
-Console.WriteLine("4===>" + licznik4);
-Console.WriteLine("5===>" + licznik5);
-Console.WriteLine("6===>" + licznik6);
-Console.WriteLine("7===>" + licznik7);
-Console.WriteLine("8===>" + licznik8);
-Console.WriteLine("9===>" + licznik9);
+
+
+Console.WriteLine($"Najlepszy z najlepszych { EmployeewithMaxResult.Name} {EmployeewithMaxResult.Surname} { EmployeewithMaxResult.Age}latek   otrzymal  {maxResult} punktow ");
+
+class Employe
+{
+    private List <int> score = new List<int>();
+    public Employe(string name, string surname,string  age)
+    {
+        this.Name = name;
+        this.Surname = surname;
+        this.Age = age;
+    }
+    public string Name { get; private set; }
+
+    public string Surname { get; private set; }
+    public string Age { get; private set; }
+   
+    public int  Result 
+    {
+        get 
+        {
+            return this.score.Sum();
+        }
+    
+    }
+    public void Addscore(int number) 
+    {
+        this.score.Add(number);
+    }
+   
+}
